@@ -5,20 +5,27 @@
     <script>
       var url = 'https://www.googleapis.com/calendar/v3/calendars/';
       var calendar = 'rofff8a3lr670kseoioopm9ark@group.calendar.google.com';
-      var key = '';
+      var key;
       var now = new Date().toISOString();
 
-      var $defer = $.ajax({
-        type: 'GET',
-        url: url + calendar + '/events?key=' + key + '&timeMin=' + now,
-        headers: {
-          'X-JavaScript-User-Agent':  'Google APIs Explorer'
-        }
+      var $getKey = $.get('key.json').done(function(response){
+        console.log(response);
+        key = response.key;
+
+        var $defer = $.ajax({
+          type: 'GET',
+          url: url + calendar + '/events?key=' + key + '&timeMin=' + now,
+          headers: {
+            'X-JavaScript-User-Agent':  'Google APIs Explorer'
+          }
+        });
+
+        $defer.done(function(response){
+          console.log(arguments);
+        });
       });
 
-      $defer.done(function(response){
-        console.log(arguments);
-      });
+
     </script>
   </head>
   <body>
