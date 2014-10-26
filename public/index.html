@@ -7,25 +7,27 @@
       var calendar = 'rofff8a3lr670kseoioopm9ark@group.calendar.google.com';
       var key;
       var now = new Date().toISOString();
+      var $eventsDefer;
 
-      var $getKey = $.get('key.json').done(function(response){
-        console.log(response);
-        key = response.key;
-
-        var $defer = $.ajax({
+      function getEvents(){
+        return $.ajax({
           type: 'GET',
           url: url + calendar + '/events?key=' + key + '&timeMin=' + now,
           headers: {
             'X-JavaScript-User-Agent':  'Google APIs Explorer'
           }
         });
+      }
 
-        $defer.done(function(response){
-          console.log(arguments);
+      $.get('key.json').done(function(response){
+        key = response.key;
+
+        $eventsDefer = getEvents();
+
+        $eventsDefer.done(function(response){
+          console.log(response);
         });
       });
-
-
     </script>
   </head>
   <body>
