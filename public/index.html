@@ -1,36 +1,16 @@
 <html>
   <head>
-
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script>
-      var url = 'https://www.googleapis.com/calendar/v3/calendars/';
-      var calendar = 'rofff8a3lr670kseoioopm9ark@group.calendar.google.com';
-      var key;
-      var now = new Date().toISOString();
-      var $eventsDefer;
-
-      function getEvents(){
-        return $.ajax({
-          type: 'GET',
-          url: url + calendar + '/events?key=' + key + '&timeMin=' + now,
-          headers: {
-            'X-JavaScript-User-Agent':  'Google APIs Explorer'
-          }
-        });
-      }
-
-      $.get('key.json').done(function(response){
-        key = response.key;
-
-        $eventsDefer = getEvents();
-
-        $eventsDefer.done(function(response){
-          console.log(response);
-        });
-      });
-    </script>
+    <script src="js/main.js"></script>
   </head>
   <body>
-    <img src="img/logo.png">
+    <div class="logo">
+      <h1>Thomas &amp; Hall</h1>
+    </div>
+    <div class="calendar">
+      <h2>Calendar</h2>
+      <ul></ul>
+    </div>
   </body>
 </html>

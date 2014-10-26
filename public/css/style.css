@@ -1,0 +1,46 @@
+@import '//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css';
+
+/*
+  Border box sizing with appropriate inheritance
+  http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Add 100% height so we can have elements scale fluidly vertically*/
+body, html {
+  height: 100%;
+}
+
+body {
+  background: #0f0f0f;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #eee;
+}
+
+
+
+.logo {
+  width: 66%;
+  border: 1px solid red;
+  float: left;
+  height: 100%;
+  background-image: url(../img/logo.png);
+  background-size: contain;
+  background-position: center center;
+  text-indent: -100%;
+  background-repeat: no-repeat;
+}
+
+.calendar {
+  width: 34%;
+  border: 1px solid blue;
+  float: right;
+  height: 100%;
+}
