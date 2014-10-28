@@ -2,15 +2,27 @@
   <head>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
     <script src="js/main.js"></script>
   </head>
   <body>
+    <script id="template-calendar-item" type="text/template">
+      <li>
+        <div class="date"><%- new Date(start.dateTime).toDateString() %></div>
+        <div class="name"><%= summary %></div>
+        <% if (location) { %>
+          <div class="location"><%= location %></div>
+        <% } %>
+      </li>
+    </script>
     <div class="logo">
       <h1>Thomas &amp; Hall</h1>
     </div>
-    <div class="calendar">
+    <div class="content">
       <h2>Calendar</h2>
-      <ul></ul>
+      <div class="calendar">
+        <ul></ul>
+      </div>
     </div>
   </body>
 </html>
