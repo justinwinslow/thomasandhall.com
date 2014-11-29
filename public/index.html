@@ -3,25 +3,48 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.js"></script>
     <script src="js/main.js"></script>
   </head>
   <body>
     <script id="template-calendar-item" type="text/template">
       <li>
-        <div class="date"><%- new Date(start.dateTime).toDateString() %></div>
+        <div class="date">
+          <% var date = moment(start.dateTime) %>
+          <%- date.format('MMM Do YYYY @ h:mma') %>
+        </div>
         <div class="name"><%= summary %></div>
         <% if (location) { %>
           <div class="location"><%= location %></div>
         <% } %>
       </li>
     </script>
-    <div class="logo">
+    <header>
       <h1>Thomas &amp; Hall</h1>
-    </div>
+    </header>
     <div class="content">
-      <h2>Calendar</h2>
+      <div class="video">
+        <iframe width="560" height="315" src="//www.youtube.com/embed/yl0UCq0wsvs" frameborder="0" allowfullscreen></iframe>
+      </div>
       <div class="calendar">
-        <ul></ul>
+        <h2>Upcoming Shows</h2>
+        <div>
+          <ul></ul>
+        </div>
+      </div>
+      <div class="connect">
+        <h2>Connect With Us</h2>
+        <ul>
+          <li class="facebook">
+            <a href="https://www.facebook.com/ThomasandHall" target="_blank">FaceBook</a>
+          </li>
+          <li class="reverbnation">
+            <a href="http://www.reverbnation.com/thomasandhall" target="_blank">reverbnation</a>
+          </li>
+          <li class="email">
+            <a href="mailTo:Hall6089@sbcglobal.net">email</a>
+          </li>
+        </ul>
       </div>
     </div>
   </body>
