@@ -26,7 +26,7 @@ body {
   background: #0f0f0f;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', Helvetica, Arial, sans-serif;
   font-weight: normal;
-  color: #eee;
+  color: #ccc;
   font-size: 12px;
   line-height: 1.25em;
   text-shadow: 0 1px 0 #000;
@@ -45,7 +45,7 @@ h2 {
 }
 
 header {
-  border-top: 6px solid #fff;
+  border-top: 6px solid #ccc;
   height: 148px;
   padding: 24px;
 }
@@ -143,7 +143,7 @@ iframe {
 
 .connect ul li a {
   font-size: 0;
-  color: #fff;
+  color: #ccc;
   text-decoration: none;
   opacity: 0.5;
   transition: opacity 0.2s;
