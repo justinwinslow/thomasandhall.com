@@ -20,12 +20,15 @@ $.get('key.json').done(function(response){
   $eventsDefer = getEvents();
 
   $eventsDefer.done(function(response){
-    // console.log(response);
+    var shows = _.sortBy(response.items, function(item){
+      return item.start.dateTime;
+    });
+
     $(document).ready(function(){
       var $cal = $('.calendar ul');
       var itemTemplate = _.template($('#template-calendar-item').text());
 
-      $.each(response.items, function(index, item){
+      $.each(shows, function(index, item){
         // console.log(item);
         var $li = $(itemTemplate(item));
 
