@@ -170,6 +170,10 @@ iframe {
   content: '\f005';
 }
 
-.connect ul li.email a:before {
+.connect ul li.twitter a:before {
   content: '\f1fa';
+}
+
+.connect ul li.email a:before {
+  content: '\f0e0';
 }
