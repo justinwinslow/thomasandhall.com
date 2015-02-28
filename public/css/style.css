@@ -30,6 +30,7 @@ body {
   font-size: 12px;
   line-height: 1.25em;
   text-shadow: 0 1px 0 #000;
+  border-top: 6px solid #ccc;
 }
 
 h1 {
@@ -56,6 +57,12 @@ header h1 {
   font-weight: normal;
   letter-spacing: -0.025em;
   float: left;
+}
+
+@media (max-width: 450px) {
+  header h1 {
+    float: none;
+  }
 }
 
 header h1 span {
@@ -142,6 +149,14 @@ header h1 span {
 .connect {
   max-width: 480px;
   float: right;
+  overflow: hidden;
+}
+
+@media (max-width: 450px) {
+  .connect {
+    float: none;
+    margin-top: 1em;
+  }
 }
 
 .connect ul {
