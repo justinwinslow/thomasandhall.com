@@ -14,25 +14,27 @@ function getEvents(){
   });
 }
 
-$.get('key.json').done(function(response){
-  key = response.key;
+$(function() {
+  $.get('key.json').done(function(response){
+    key = response.key;
 
-  $eventsDefer = getEvents();
+    $eventsDefer = getEvents();
 
-  $eventsDefer.done(function(response){
-    var shows = _.sortBy(response.items, function(item){
-      return item.start.dateTime;
-    });
+    $eventsDefer.done(function(response){
+      var shows = _.sortBy(response.items, function(item){
+        return item.start.dateTime;
+      });
 
-    $(document).ready(function(){
-      var $cal = $('.calendar ul');
-      var itemTemplate = _.template($('#template-calendar-item').text());
+      $(document).ready(function(){
+        var $cal = $('.calendar ul');
+        var itemTemplate = _.template($('#template-calendar-item').text());
 
-      $.each(shows, function(index, item){
-        // console.log(item);
-        var $li = $(itemTemplate(item));
+        $.each(shows, function(index, item){
+          // console.log(item);
+          var $li = $(itemTemplate(item));
 
-        $cal.append($li);
+          $cal.append($li);
+        });
       });
     });
   });

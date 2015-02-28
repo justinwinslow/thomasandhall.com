@@ -1,40 +1,28 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=0" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?version=1425154891489">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?version=1425154891489"></script>
   </head>
   <body>
     <script id="template-calendar-item" type="text/template">
       <li>
-        <div class="date">
+        <span class="name"><%= summary %></span>
+        <span class="date">
           <% var date = moment(start.dateTime) %>
           <%- date.format('MMM Do YYYY @ h:mma') %>
-        </div>
-        <div class="name"><%= summary %></div>
+        </span>
         <% if (location) { %>
-          <div class="location"><%= location %></div>
+          <span class="location"><%= location %></span>
         <% } %>
       </li>
     </script>
     <header>
-      <h1>Thomas &amp; Hall</h1>
-    </header>
-    <div class="content">
-      <div class="video">
-        <iframe width="560" height="315" src="//www.youtube.com/embed/nqHnrJbwmZw" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="calendar">
-        <h2>Upcoming Shows</h2>
-        <div>
-          <ul></ul>
-        </div>
-      </div>
+      <h1>Thomas <span>&amp;</span> Hall</h1>
       <div class="connect">
-        <h2>Connect With Us</h2>
         <ul>
           <li class="facebook">
             <a href="https://www.facebook.com/ThomasandHall" target="_blank">FaceBook</a>
@@ -49,6 +37,17 @@
             <a href="mailTo:Hall6089@sbcglobal.net">email</a>
           </li>
         </ul>
+      </div>
+    </header>
+    <div class="content">
+      <div class="video">
+        <iframe align="middle" width="534" height="300" src="//www.youtube.com/embed/nqHnrJbwmZw" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="calendar">
+        <h2>Upcoming Shows</h2>
+        <div>
+          <ul></ul>
+        </div>
       </div>
     </div>
   </body>
